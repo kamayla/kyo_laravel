@@ -24,6 +24,12 @@
                     <input id="thumbnail_image" name="thumbnail_image" type="file" accept="image/*">
                 </lavel>
             </div>
+            <div>
+                <lavel for="body_image">
+                    トップ画像:
+                    <input id="body_image" name="body_image" type="file" accept="image/*">
+                </lavel>
+            </div>
             <input type="submit" value="送信">
         </form>
 
@@ -37,7 +43,7 @@
         </tr>
         @foreach($posts as $post)
             <tr>
-                <td><img style="height: 50px;" src="{{ asset($post->thumbnail_path) }}" alt=""></td>
+                <td><img style="height: 50px;" src="{{ asset("storage/img/$post->thumbnail_path") }}" alt=""></td>
                 <td><a href="/detail/{{ $post->id }}">{{ $post->title }}</a></td>
                 <td>{{ $post->body }}</td>
                 <td><a href="/deletePost/{{ $post->id }}">削除</a></td>
