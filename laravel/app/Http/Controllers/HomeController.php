@@ -37,9 +37,9 @@ class HomeController extends Controller
 
         $user =auth()->user(); //現在ログインしているユーザーのインスタンスを取得する
 
-        $file = $request->file('thumbnail_image');
+        $image_path = $request->file('thumbnail_image')->store('public/img');
 
-        $path = $this->uploadFile($file);
+        $path = basename($image_path);
 
         /**
          * フロントエンドから受け取ったRequestのtitleとbodyから
@@ -83,16 +83,5 @@ class HomeController extends Controller
 
         return redirect()->action('HomeController@index');
 
-    }
-
-    private function uploadFile($file): string
-    {
-        $fileName = $file->getClientOriginalName();
-
-        $path = "img/$fileName";
-
-        file_put_contents(public_path($path), $file->getContent());
-
-        return $path;
     }
 }

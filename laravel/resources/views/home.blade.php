@@ -37,7 +37,7 @@
         </tr>
         @foreach($posts as $post)
             <tr>
-                <td><img style="height: 50px;" src="{{ asset($post->thumbnail_path) }}" alt=""></td>
+                <td><img style="height: 50px;" src="{{ asset("storage/img/$post->thumbnail_path") }}" alt=""></td>
                 <td><a href="/detail/{{ $post->id }}">{{ $post->title }}</a></td>
                 <td>{{ $post->body }}</td>
                 <td><a href="/deletePost/{{ $post->id }}">削除</a></td>
