@@ -93,6 +93,30 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/sebastian/object-reflector" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/facade/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/scrivo/highlight.php" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/fruitcake/laravel-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/guzzlehttp/guzzle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
