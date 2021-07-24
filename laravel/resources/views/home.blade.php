@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
 
-        <form action="/savePost" method="POST">
+        <form action="/savePost" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <lavel for="title">
@@ -18,17 +18,26 @@
                     <textarea id="body" name="body" cols="40" rows="4"></textarea>
                 </lavel>
             </div>
+            <div>
+                <lavel for="thumbnail_image">
+                    サムネイル画像:
+                    <input id="thumbnail_image" name="thumbnail_image" type="file" accept="image/*">
+                </lavel>
+            </div>
             <input type="submit" value="送信">
         </form>
 
     </div>
     <table class="table">
         <tr>
+            <th>サムネイル</th>
             <th>タイトル</th>
             <th>本文</th>
+            <th>アクション</th>
         </tr>
         @foreach($posts as $post)
             <tr>
+                <td><img style="height: 50px;" src="{{ asset($post->thumbnail_path) }}" alt=""></td>
                 <td><a href="/detail/{{ $post->id }}">{{ $post->title }}</a></td>
                 <td>{{ $post->body }}</td>
                 <td><a href="/deletePost/{{ $post->id }}">削除</a></td>

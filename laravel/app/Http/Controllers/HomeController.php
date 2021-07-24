@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,14 @@ class HomeController extends Controller
         return view('home' , ['posts' => $posts]);
     }
 
-    public function savePost(Request $request): RedirectResponse{
+    public function savePost(Request $request): RedirectResponse
+    {
 
         $user =auth()->user(); //現在ログインしているユーザーのインスタンスを取得する
+
+        $file = $request->file('thumbnail_image');
+
+        $path = $this->uploadFile($file);
 
         /**
          * フロントエンドから受け取ったRequestのtitleとbodyから
@@ -42,6 +48,7 @@ class HomeController extends Controller
         $post = Post::make([
             'title' => $request->title,
             'body' => $request->body,
+            'thumbnail_path' => $path,
         ]);
         /*
          * ここでUserクラスのリレーションとしてPostをDBに保存する。
@@ -76,5 +83,16 @@ class HomeController extends Controller
 
         return redirect()->action('HomeController@index');
 
+    }
+
+    private function uploadFile($file): string
+    {
+        $fileName = $file->getClientOriginalName();
+
+        $path = "img/$fileName";
+
+        file_put_contents(public_path($path), $file->getContent());
+
+        return $path;
     }
 }
