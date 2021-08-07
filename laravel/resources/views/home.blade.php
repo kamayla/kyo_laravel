@@ -19,6 +19,16 @@
                 </lavel>
             </div>
             <div>
+                <lavel for="body">
+                    Tag:
+                    <select name="tags[]" id="" multiple>
+                        @foreach ($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach
+                    </select>
+                </lavel>
+            </div>
+            <div>
                 <lavel for="thumbnail_image">
                     サムネイル画像:
                     <input id="thumbnail_image" name="thumbnail_image" type="file" accept="image/*">

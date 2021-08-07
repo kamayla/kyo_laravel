@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,15 +28,18 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $tags = Tag::all();
         $posts = $user->posts;
 
-        return view('home' , ['posts' => $posts]);
+        return view('home' , [
+            'posts' => $posts,
+            'tags' => $tags
+        ]);
     }
 
     public function savePost(Request $request): RedirectResponse
     {
-
-        $user =auth()->user(); //現在ログインしているユーザーのインスタンスを取得する
+        $user = auth()->user(); //現在ログインしているユーザーのインスタンスを取得する
 
         $image_path = $request->file('thumbnail_image')->store('public/img');
 

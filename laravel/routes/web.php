@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/' , 'AnonymousController@index')->name('anonymous_top');
+Route::get('/' , 'AnonymousController@index')->name('anonymous.top');
 Route::get('/anonymousDetail/{id}' , 'AnonymousController@detail');
 
 
@@ -24,4 +25,9 @@ Route::post('/savePost', 'HomeController@savePost');
 Route::get('/detail/{id}' , 'HomeController@detail');
 Route::post('/updatePost', 'HomeController@updatePost');
 Route::get('/deletePost/{id}', 'HomeController@deletePost');
+
+Route::get('/tags', 'TagController@index')->name('tags.list');
+Route::post('/tags', 'TagController@store');
+
+
 

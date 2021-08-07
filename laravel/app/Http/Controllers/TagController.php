@@ -3,39 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
-        //
-    }
+        $tags = Tag::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('tags', [
+            'tags' => $tags,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        Tag::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->to(route('tags.list'));
     }
 
     /**
