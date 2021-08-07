@@ -27,9 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $tags = Tag::all();
         $posts = $user->posts;
 
-        return view('home' , ['posts' => $posts]);
+        return view('home' , ['posts' => $posts ,'tags' => $tags]);
     }
 
     public function savePost(Request $request): RedirectResponse

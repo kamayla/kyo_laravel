@@ -30,6 +30,7 @@
                     <input id="body_image" name="body_image" type="file" accept="image/*">
                 </lavel>
             </div>
+            <select name="tag" id="tag">{{ $tags->name }}</select>
             <input type="submit" value="送信">
         </form>
 

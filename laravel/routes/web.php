@@ -24,4 +24,6 @@ Route::post('/savePost', 'HomeController@savePost');
 Route::get('/detail/{id}' , 'HomeController@detail');
 Route::post('/updatePost', 'HomeController@updatePost');
 Route::get('/deletePost/{id}', 'HomeController@deletePost');
+Route::get('/tags', 'TagController@index');
+Route::post('/tags', 'TagController@store');
 
